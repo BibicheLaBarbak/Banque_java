@@ -28,5 +28,6 @@ public class Statistiques {
         System.out.println("dont " + prctCB + " % par Carte Bleue");
         System.out.println("dont " + prctCH + " % par Chèque");
         System.out.println("dont " + prctVI + " % par Virement");
+        LectureClavier.close();
     }
 }
