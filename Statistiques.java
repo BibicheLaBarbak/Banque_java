@@ -12,14 +12,14 @@ public class Statistiques {
         nbCB = LectureClavier.nextInt();
         System.out.print("Nombre de chèques émis : ");
         nbCHEQUE = LectureClavier.nextInt();
-        System.out.print("Nombre de chèques émis : ");
+        System.out.print("Nombre de virements émis : ");
         nbVIREMENT = LectureClavier.nextInt();
 
         // Calcul du nombre de débits totaux
         nbDEBIT = nbCB + nbCHEQUE + nbVIREMENT;
 
         // Calcul du pourcentage de chaque moyen de paiement
-        prctCB = (float) nbCB / nbDEBIT * 100;
+        prctCB = (float) /*Conversion int -> float*/ nbCB / nbDEBIT * 100; 
         prctCH = (float) nbCHEQUE / nbDEBIT * 100;
         prctVI = (float) nbVIREMENT / nbDEBIT * 100;
 
