@@ -5,7 +5,7 @@ public class banque_start {
 
         // Déclarations des données
         String TypeCpt = "Courant", Theme = "Loyer", MoyenPaie = "CB";
-        long NumCpt = 250230;
+        long cptdata, NumCpt = '0'; 
         int Choix;
         float ValeurOp = 1400, Taux = 10;
         Date Date;
@@ -42,9 +42,9 @@ public class banque_start {
 
             case 2:
                 System.out.println("Compte à consulter : ");
-                NumCpt = LectureClavier.nextLong();
-                if (NumCpt == 250230) {
-                    System.out.println("Numéro de compte ouvert : \"250230\" ");
+                cptdata = LectureClavier.nextLong();
+                if (cptdata == NumCpt) {
+                    System.out.println("Numéro du compte ouvert : "+NumCpt);
                     System.out.println("Type de compte : " +TypeCpt);
                     System.out.println("Valeur initiale : " +ValeurOp);
                 } else {
@@ -69,7 +69,12 @@ public class banque_start {
                 break;
 
             default:
+                while (System.in.read('\n')) {
+                    
                 System.out.println("Vous n'avez sélectionné aucune des 5 options !");
+                System.out.println("Appuyez sur \"entrée\" pour retourner au menu.");
+                }
+
                 break;
         }
         LectureClavier.close();
