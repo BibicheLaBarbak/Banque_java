@@ -14,58 +14,57 @@ public class banque_part2 {
         Scanner LectureClavier = new Scanner(System.in);
 
         do {
-        choix = MenuPrincipal(); //Affichage du menu + return de la valeur tapée
-        switch (choix) {
-            case 1:
-                do {
-                System.out.println("Type du compte [Types possibles : (C)ourant, (J)oint, (E)pargne] : ");
-                typeCpt = LectureClavier.next().charAt(0);
-                } while (typeCpt != 'C' && typeCpt != 'J' && typeCpt != 'E');             
-                System.out.println("Numero du compte : ");
-                numCpt = LectureClavier.nextLong();
-                System.out.println("Première valeur créditée : ");
-                valeurOp = LectureClavier.nextFloat();
-                if (typeCpt == 'E') {;
-                    System.out.println("Taux de placement : ");
-                    taux = LectureClavier.nextFloat();
-                }
-                break;
+            choix = MenuPrincipal(); // Affichage du menu + return de la valeur tapée
+            switch (choix) {
+                case 1:
+                    do {
+                        System.out.println("Type du compte [Types possibles : (C)ourant, (J)oint, (E)pargne] : ");
+                        typeCpt = LectureClavier.next().charAt(0);
+                    } while (typeCpt != 'C' && typeCpt != 'J' && typeCpt != 'E');
+                    System.out.println("Numero du compte : ");
+                    numCpt = LectureClavier.nextLong();
+                    System.out.println("Première valeur créditée : ");
+                    valeurOp = LectureClavier.nextFloat();
+                    if (typeCpt == 'E') {
+                        System.out.println("Taux de placement : ");
+                        taux = LectureClavier.nextFloat();
+                    }
+                    break;
 
-            case 2:
-                System.out.println("Compte à consulter : ");
-                numCptSaisie = LectureClavier.nextLong();
-                if (numCptSaisie == numCpt) {
-                    System.out.println("Numéro du compte ouvert : " + numCpt);
-                    System.out.println("Type de compte : " + typeCpt);
-                    System.out.println("Valeur initiale : " + valeurOp);
-                } else {
-                    System.out.println("Ce compte n'existe pas !");
+                case 2:
+                    System.out.println("Compte à consulter : ");
+                    numCptSaisie = LectureClavier.nextLong();
+                    if (numCptSaisie == numCpt) {
+                        System.out.println("Numéro du compte ouvert : " + numCpt);
+                        System.out.println("Type de compte : " + typeCpt);
+                        System.out.println("Valeur initiale : " + valeurOp);
+                    } else {
+                        System.out.println("Ce compte n'existe pas !");
+                        System.out.println("");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Option 3 : Option non programmée ");
+                    break;
+
+                case 4:
+                    Sortir();
+                    break;
+
+                case 5:
+                    ALaide();
+                    break;
+
+                default:
+                    System.out.println("Erreur : Option non existante.");
                     System.out.println("");
-                }
-                break;
+                    break;
+            }
+        } while (choix != 4);
 
-            case 3:
-                System.out.println("Option 3 : Option non programmée ");
-                break;
-
-            case 4:
-                Sortir();
-                break;
-
-            case 5:
-                ALaide();
-                break;
-
-            default:
-                System.out.println("Erreur : Option non existante.");
-                System.out.println("");
-                break;
-        }
-    } while (choix != 4);
-
-    LectureClavier.close();
+        LectureClavier.close();
     }
-
 
     public static int MenuPrincipal() {
         int chx;
